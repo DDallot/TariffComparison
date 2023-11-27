@@ -15,7 +15,7 @@ public class BasicElectricityTariff : ITariffCalculator
     public decimal CalculateAnnualCosts(int consumptionKwh)
     {
         var baseCostPerYear = _baseCost * 12;
-        var consumptionCost = consumptionKwh * _additionalKwhCost /100;
+        var consumptionCost = consumptionKwh * (_additionalKwhCost /100);
 
         return baseCostPerYear + consumptionCost;
     }

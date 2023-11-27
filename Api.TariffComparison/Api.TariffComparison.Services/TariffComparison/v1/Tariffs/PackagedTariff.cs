@@ -21,7 +21,7 @@ public class PackagedTariff : ITariffCalculator
         if (consumptionKwh > _includedKwh)
         {
             var additionalKwh = consumptionKwh - _includedKwh;
-            annualCost += additionalKwh * _additionalKwhCost/100;
+            annualCost += additionalKwh * (_additionalKwhCost/100);
         }
 
         return annualCost;
