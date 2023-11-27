@@ -10,10 +10,9 @@ This is an extract of the items returned by the Tariff Provider:
 
 ```json
 [
-{"name": "Product A", "type": 1, "baseCost": 5, "additionalKwhCost": 22},
-{"name": "Product B", "type": 2, "includedKwh": 4000, "baseCost": 800,
-"additionalKwhCost": 30},
-...
+	{"name": "Product A", "type": 1, "baseCost": 5, "additionalKwhCost": 22},
+	{"name": "Product B", "type": 2, "includedKwh": 4000, "baseCost": 800, "additionalKwhCost": 30},
+	...
 ]
 ```
 
@@ -22,6 +21,7 @@ This is an extract of the items returned by the Tariff Provider:
 ##### 1. Product A
 
 *Type: “1 - basic electricity tariff”*
+
 Calculation model: base costs per month 5 € + consumption costs 22 cent/kWh. Examples:
 - Consumption: 3500 kWh/year => Annual costs = 830 €/year (5€ * 12 months = 60 € base
 costs + 3500 kWh/year * 22 cent/kWh = 770 € consumption costs)
@@ -31,6 +31,7 @@ costs + 4500 kWh/year * 22 cent/kWh = 990 € consumption costs)
 ##### 2. Product B
 
 *Type: “2 - Packaged tariff”*
+
 Calculation model: 800 € for up to 4000 kWh/year and above 4000 kWh/year additionally 30
 cent/kWh. Examples:
 - Consumption: 3500 kWh/year => Annual costs = 800 €/year

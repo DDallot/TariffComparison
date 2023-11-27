@@ -21,8 +21,4 @@
     <ProjectReference Include="..\Api.TariffComparison.Services\Api.TariffComparison.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="TariffComparison\v1\Tariffs\" />
-  </ItemGroup>
-
 </Project>

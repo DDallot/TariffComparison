@@ -7,16 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="TariffComparison\v1\Extensions\" />
-    <Folder Include="TariffProvider\v1\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Api.TariffComparison.Database.Repositories\Api.TariffComparison.Database.Repositories.csproj" />
     <ProjectReference Include="..\Api.TariffComparison.Services.Domain\Api.TariffComparison.Services.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TariffProviders\v1\Extensions\" />
   </ItemGroup>
 
 </Project>

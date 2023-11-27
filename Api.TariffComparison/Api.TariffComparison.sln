@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.TariffComparison.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.TariffComparison.Contracts", "Api.TariffComparison.Contracts\Api.TariffComparison.Contracts.csproj", "{F88FF781-7AB5-43E6-B5B1-807E7E7155EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.TariffComparison.Database", "Api.TariffComparison.Database\Api.TariffComparison.Database.csproj", "{DA908495-E5FE-433C-BC4C-488219E0479B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.TariffComparison.Database", "Api.TariffComparison.Database\Api.TariffComparison.Database.csproj", "{DA908495-E5FE-433C-BC4C-488219E0479B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.TariffComparison.Database.Repositories", "Api.TariffComparison.Database.Repositories\Api.TariffComparison.Database.Repositories.csproj", "{1C4F8448-989E-43FA-9E89-688E39BC61AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.TariffComparison.Database.Repositories", "Api.TariffComparison.Database.Repositories\Api.TariffComparison.Database.Repositories.csproj", "{1C4F8448-989E-43FA-9E89-688E39BC61AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

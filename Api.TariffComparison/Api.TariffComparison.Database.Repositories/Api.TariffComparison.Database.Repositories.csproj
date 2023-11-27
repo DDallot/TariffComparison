@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Api.TariffComparison.Database\Api.TariffComparison.Database.csproj" />
+  </ItemGroup>
+
 </Project>

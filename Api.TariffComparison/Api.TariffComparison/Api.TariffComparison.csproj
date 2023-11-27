@@ -2,16 +2,35 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>5658aea5-dbb6-4e83-99cc-069fc14c00d9</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
+  <PropertyGroup>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc" Version="7.1.0" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="7.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Api.TariffComparison.Contracts\Api.TariffComparison.Contracts.csproj" />
+    <ProjectReference Include="..\Api.TariffComparison.Database\Api.TariffComparison.Database.csproj" />
+    <ProjectReference Include="..\Api.TariffComparison.Services.Domain\Api.TariffComparison.Services.Domain.csproj" />
+    <ProjectReference Include="..\Api.TariffComparison.Services\Api.TariffComparison.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Configs\" />
   </ItemGroup>
 
 </Project>
