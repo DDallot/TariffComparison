@@ -71,6 +71,7 @@ computers if they are running Linux
 
     ```
     docker run -v "$($PWD)/:/repo" -v "/var/run/docker.sock:/var/run/docker.sock" -it ubuntu
+    
     cd repo
     ```
 
@@ -79,7 +80,7 @@ computers if they are running Linux
     Run the initialization script to set up the required environment for the project.
 
     ```
-    > ./Initialize.sh
+    ./Initialize.sh
     ```
 
 4.  **Access the Swagger Documentation**
