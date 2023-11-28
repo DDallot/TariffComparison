@@ -54,3 +54,23 @@ based on their annual costs. The comparison should accept the following input pa
 - Bonus point: set up a script to quickly install all application requirements and run it on team member
 computers if they are running Linux
 - Note: Please implement this task in C#, NodeJS or PHP
+
+
+### Getting Started
+
+
+1. Simulate a new Linux machine:
+   
+    ```
+    docker run -v "$($PWD)/:/repo" -v "/var/run/docker.sock:/var/run/docker.sock" -it ubuntu
+    ```
+2. Navigate to the project directory
+   
+    ```
+    cd repo
+    ```
+3. Run the initialization script for the Linux container:
+   
+    ```
+    ./Initialize.sh
+    ```
