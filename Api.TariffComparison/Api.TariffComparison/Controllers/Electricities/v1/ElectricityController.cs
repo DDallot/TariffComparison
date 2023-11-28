@@ -18,6 +18,11 @@ public class ElectricityController : ControllerBase, IElectricity
         _tariff = tariff ?? throw new ArgumentNullException(nameof(tariff));
     }
 
+    /// <summary>
+    /// Compares tariffs based on annual costs for a given consumption.
+    /// </summary>
+    /// <param name="consumptionKwh">The annual consumption in  Kwh.</param>
+    /// <returns>Return an Object with Tariff Name and corresponding annual cost.</returns>
     [HttpGet("compare")]
     public async Task<ListResult<ComparisonResponse>> CompareAsync([FromQuery] int consumptionKwh)
     {

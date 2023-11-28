@@ -59,7 +59,7 @@ computers if they are running Linux
 
 1. **Navigate to the Project Root**
     
-    Before getting started, ensure you are in the project root directory. This is the main directory of your project where essential files and folders are located.
+    Before getting started, ensure you are in the project root directory. This is the main directory of the project where essential files and folders are located.
 
     ```
     cd <your_directory>/TariffComparison
@@ -82,9 +82,9 @@ computers if they are running Linux
     > ./Initialize.sh
     ```
 
-4.  **Access the Swagger Endpoint**
+4.  **Access the Swagger Documentation**
     
-    After setting up the environment, open your web browser and go to the Swagger Endpoint at the following address:
+    After setting up the environment, open your web browser and go to the Swagger Documentation at the following address:
 
     - http://localhost:8088/swagger/index.html
 
