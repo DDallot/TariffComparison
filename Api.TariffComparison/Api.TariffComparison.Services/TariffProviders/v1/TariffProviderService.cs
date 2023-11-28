@@ -15,10 +15,10 @@ public class TariffProviderService : ITariffProviderService
         _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
     }
 
+    //Emulate the behavior of an external service
     public Task<string> GetProductsAsync()
     {
         var products = _productRepository.List().Select(p => p.FromEntity()).ToList();
-
 
         var jsonSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
         var json = JsonConvert.SerializeObject(products, Formatting.None, jsonSettings);

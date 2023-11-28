@@ -6,6 +6,7 @@ namespace Api.TariffComparison.Services.TariffProviders.v1;
 
 public class TariffProviderMockService : ITariffProviderService
 {
+    //Emulate the behavior of an external service
     public Task<string> GetProductsAsync()
     {
         var products = new List<Product>

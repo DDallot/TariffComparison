@@ -18,17 +18,27 @@ public class TariffFactory : ITariffFactory
 
     public async Task<IEnumerable<ElectricityTariff>> GetElectricityTariffsAsync()
     {
+        //Emulate the behavior of an external service
         var jsonProducts = await _tariffProviderService.GetProductsAsync();
 
-        var electricityPrices = JsonConvert.DeserializeObject<IEnumerable<ElectricityPrice>>(jsonProducts) ??
-                                new List<ElectricityPrice>();
+        var electricityPrices = DeserializeElectricityPrices(jsonProducts);
 
-        return electricityPrices.Select(electricityPrice => electricityPrice.Type switch
-            {
-                1 => electricityPrice.CreateBasicElectricityTariff(),
-                2 => electricityPrice.CreatePackagedTariff(),
-                _ => throw new Exception($"Electricity Type {electricityPrice.Type} not found.")
-            })
-            .ToList();
+        return electricityPrices.Select(CreateElectricityTariff).ToList();
+    }
+
+    private static IEnumerable<ElectricityPrice> DeserializeElectricityPrices(string json)
+    {
+        return JsonConvert.DeserializeObject<IEnumerable<ElectricityPrice>>(json) ??
+               Enumerable.Empty<ElectricityPrice>();
+    }
+
+    private static ElectricityTariff CreateElectricityTariff(ElectricityPrice electricityPrice)
+    {
+        return electricityPrice.Type switch
+        {
+            1 => electricityPrice.CreateBasicElectricityTariff(),
+            2 => electricityPrice.CreatePackagedTariff(),
+            _ => throw new Exception($"Electricity Type {electricityPrice.Type} not found.")
+        };
     }
 }

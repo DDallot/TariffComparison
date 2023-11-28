@@ -18,20 +18,20 @@ public class Electricity : IElectricity
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<ListResult<TariffComparisonResponse>> CompareAsync(int consumptionKwh)
+    public async Task<ListResult<ComparisonResponse>> CompareAsync(int consumptionKwh)
     {
         try
         {
             var comparisons = await _tariffComparisonService.CompareTariffsAsync(consumptionKwh);
             var result = comparisons.Convert();
 
-            return await Task.FromResult(new ListResult<TariffComparisonResponse> { Items = result });
+            return await Task.FromResult(new ListResult<ComparisonResponse> { Items = result });
         }
         catch (Exception ex)
         {
             _logger.LogError("Error on Object {0}, method {1}, exception {2}", nameof(Electricity),
                 nameof(CompareAsync), ex.Message);
-            return new ListResult<TariffComparisonResponse>
+            return new ListResult<ComparisonResponse>
             {
                 HasError = true,
                 Error = "Error getting the Comparisons."

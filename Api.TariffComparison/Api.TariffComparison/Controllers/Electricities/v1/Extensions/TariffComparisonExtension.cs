@@ -5,14 +5,14 @@ namespace Api.TariffComparison.Controllers.Electricities.v1.Extensions;
 
 public static class TariffComparisonExtension
 {
-    public static List<TariffComparisonResponse> Convert(this List<TariffComparisonResult> inputs)
+    public static List<ComparisonResponse> Convert(this List<TariffComparisonResult> inputs)
     {
         return inputs.Select(t => t.Convert()).ToList();
     }
 
-    public static TariffComparisonResponse Convert(this TariffComparisonResult input)
+    public static ComparisonResponse Convert(this TariffComparisonResult input)
     {
-        return new TariffComparisonResponse
+        return new ComparisonResponse
         {
             TariffName = input.TariffName,
             AnnualCost = input.AnnualCost

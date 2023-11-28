@@ -5,5 +5,5 @@ namespace Api.TariffComparison.Contracts.v1.Electricities;
 
 public interface IElectricity
 {
-    Task<ListResult<TariffComparisonResponse>> CompareAsync(int consumptionKwh);
+    Task<ListResult<ComparisonResponse>> CompareAsync(int consumptionKwh);
 }
