@@ -14,6 +14,7 @@ public class TariffProviderService : ITariffProviderService
     {
         _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
     }
+
     public Task<string> GetProductsAsync()
     {
         var products = _productRepository.List().Select(p => p.FromEntity()).ToList();

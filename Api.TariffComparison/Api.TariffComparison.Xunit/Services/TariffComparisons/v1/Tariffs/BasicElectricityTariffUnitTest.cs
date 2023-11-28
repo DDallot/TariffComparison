@@ -12,7 +12,8 @@ public class BasicElectricityTariffUnitTest
 
     [TestCase(3500, 5, 22, 830)]
     [TestCase(4500, 5, 22, 1050)]
-    public void CalculateAnnualCostsTest(int consumptionKwh, decimal baseCost, decimal additionalKwhCost, decimal expectedCost)
+    public void CalculateAnnualCostsTest(int consumptionKwh, decimal baseCost, decimal additionalKwhCost,
+        decimal expectedCost)
     {
         // Arrange
         var basicElectricityTariff = new BasicElectricityTariff(baseCost, additionalKwhCost);

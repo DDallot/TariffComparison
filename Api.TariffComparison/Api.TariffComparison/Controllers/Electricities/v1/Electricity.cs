@@ -8,12 +8,13 @@ namespace Api.TariffComparison.Controllers.Electricities.v1;
 
 public class Electricity : IElectricity
 {
-    private readonly ITariffComparisonService _tariffComparisonService;
     private readonly ILogger<Electricity> _logger;
+    private readonly ITariffComparisonService _tariffComparisonService;
 
     public Electricity(ITariffComparisonService tariffComparisonService, ILogger<Electricity> logger)
     {
-        _tariffComparisonService = tariffComparisonService ?? throw new ArgumentNullException(nameof(tariffComparisonService));
+        _tariffComparisonService =
+            tariffComparisonService ?? throw new ArgumentNullException(nameof(tariffComparisonService));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
@@ -25,11 +26,11 @@ public class Electricity : IElectricity
             var result = comparisons.Convert();
 
             return await Task.FromResult(new ListResult<TariffComparisonResponse> { Items = result });
-
         }
         catch (Exception ex)
         {
-            _logger.LogError("Error on Object {0}, method {1}, exception {2}", nameof(Electricity), nameof(CompareAsync), ex.Message);
+            _logger.LogError("Error on Object {0}, method {1}, exception {2}", nameof(Electricity),
+                nameof(CompareAsync), ex.Message);
             return new ListResult<TariffComparisonResponse>
             {
                 HasError = true,

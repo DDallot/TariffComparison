@@ -11,7 +11,8 @@ public class PackagedTariffUnitTest
 
     [TestCase(3500, 800, 4000, 30, 800)]
     [TestCase(4500, 800, 4000, 30, 950)]
-    public void CalculateAnnualCostsTest(int consumptionKwh, decimal baseCost, int includedKwh, decimal additionalKwhCost, decimal expectedCost)
+    public void CalculateAnnualCostsTest(int consumptionKwh, decimal baseCost, int includedKwh,
+        decimal additionalKwhCost, decimal expectedCost)
     {
         // Arrange
         var packagedTariff = new PackagedTariff(baseCost, includedKwh, additionalKwhCost);

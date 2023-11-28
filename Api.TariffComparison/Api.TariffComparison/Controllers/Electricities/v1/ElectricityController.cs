@@ -19,7 +19,7 @@ public class ElectricityController : ControllerBase, IElectricity
     }
 
     [HttpGet("compare")]
-    public async Task<ListResult<TariffComparisonResponse>> CompareAsync([FromQuery]int consumptionKwh)
+    public async Task<ListResult<TariffComparisonResponse>> CompareAsync([FromQuery] int consumptionKwh)
     {
         return await _tariff.CompareAsync(consumptionKwh);
     }

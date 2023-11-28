@@ -59,7 +59,7 @@ computers if they are running Linux
 ### Getting Started
 
 
-1. Simulate a new Linux machine:
+1. Simulate a new Linux machine
    
     ```
     docker run -v "$($PWD)/:/repo" -v "/var/run/docker.sock:/var/run/docker.sock" -it ubuntu
@@ -69,7 +69,7 @@ computers if they are running Linux
     ```
     cd repo
     ```
-3. Run the initialization script for the Linux container:
+3. Run the initialization script for the Linux container
    
     ```
     ./Initialize.sh

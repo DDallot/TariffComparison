@@ -17,8 +17,9 @@ public class TariffComparisonService : ITariffComparisonService
         var tariffs = await _tariffProductFactory.GetElectricityTariffsAsync();
 
         var result = (
-            from tariff in tariffs let annualCost = tariff.TariffCalculator.CalculateAnnualCosts(consumptionKwh)
-            orderby annualCost ascending
+            from tariff in tariffs
+            let annualCost = tariff.TariffCalculator.CalculateAnnualCosts(consumptionKwh)
+            orderby annualCost
             select new TariffComparisonResult { TariffName = tariff.Name, AnnualCost = annualCost }
         ).ToList();
 

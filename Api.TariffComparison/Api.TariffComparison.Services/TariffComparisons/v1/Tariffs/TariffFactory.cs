@@ -12,21 +12,23 @@ public class TariffFactory : ITariffFactory
 
     public TariffFactory(ITariffProviderService tariffProviderService)
     {
-        _tariffProviderService = tariffProviderService ?? throw new ArgumentNullException(nameof(tariffProviderService));
+        _tariffProviderService =
+            tariffProviderService ?? throw new ArgumentNullException(nameof(tariffProviderService));
     }
 
     public async Task<IEnumerable<ElectricityTariff>> GetElectricityTariffsAsync()
     {
         var jsonProducts = await _tariffProviderService.GetProductsAsync();
 
-        var electricityPrices = JsonConvert.DeserializeObject<IEnumerable<ElectricityPrice>>(jsonProducts) ?? new List<ElectricityPrice>();
+        var electricityPrices = JsonConvert.DeserializeObject<IEnumerable<ElectricityPrice>>(jsonProducts) ??
+                                new List<ElectricityPrice>();
 
         return electricityPrices.Select(electricityPrice => electricityPrice.Type switch
-        {
-            1 => electricityPrice.CreateBasicElectricityTariff(),
-            2 => electricityPrice.CreatePackagedTariff(),
-            _ => throw new Exception($"Electricity Type {electricityPrice.Type} not found.")
-        })
-        .ToList();
+            {
+                1 => electricityPrice.CreateBasicElectricityTariff(),
+                2 => electricityPrice.CreatePackagedTariff(),
+                _ => throw new Exception($"Electricity Type {electricityPrice.Type} not found.")
+            })
+            .ToList();
     }
 }

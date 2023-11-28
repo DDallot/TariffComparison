@@ -1,7 +1,7 @@
-using Api.TariffComparison.Infrastructure;
 using System.Reflection;
 using Api.TariffComparison.Configs;
 using Api.TariffComparison.Database;
+using Api.TariffComparison.Infrastructure;
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
 
@@ -53,11 +53,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options =>
     {
         foreach (var description in provider.ApiVersionDescriptions)
-        {
             options.SwaggerEndpoint(
                 $"/swagger/{description.GroupName}/swagger.json",
                 description.GroupName.ToUpperInvariant());
-        }
     });
 }
 

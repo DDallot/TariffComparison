@@ -4,8 +4,9 @@ namespace Api.TariffComparison.Services.TariffComparisons.v1.Tariffs;
 
 public class BasicElectricityTariff : ITariffCalculator
 {
-    private readonly decimal _baseCost;
     private readonly decimal _additionalKwhCost;
+    private readonly decimal _baseCost;
+
     public BasicElectricityTariff(decimal baseCost, decimal additionalKwhCost)
     {
         _baseCost = baseCost;
@@ -15,7 +16,7 @@ public class BasicElectricityTariff : ITariffCalculator
     public decimal CalculateAnnualCosts(int consumptionKwh)
     {
         var baseCostPerYear = _baseCost * 12;
-        var consumptionCost = consumptionKwh * (_additionalKwhCost /100);
+        var consumptionCost = consumptionKwh * (_additionalKwhCost / 100);
 
         return baseCostPerYear + consumptionCost;
     }

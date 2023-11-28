@@ -28,7 +28,7 @@ public class TariffProviderMockService : ITariffProviderService
         };
 
         var jsonSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
-        var json = JsonConvert.SerializeObject(products,Formatting.None, jsonSettings);
+        var json = JsonConvert.SerializeObject(products, Formatting.None, jsonSettings);
 
         return Task.FromResult(json);
     }

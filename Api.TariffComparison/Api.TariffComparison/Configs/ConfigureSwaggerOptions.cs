@@ -9,14 +9,15 @@ public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
 {
     private readonly IApiVersionDescriptionProvider _provider;
 
-    public ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider) => _provider = provider;
+    public ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider)
+    {
+        _provider = provider;
+    }
 
     public void Configure(SwaggerGenOptions options)
     {
         foreach (var description in _provider.ApiVersionDescriptions)
-        {
             options.SwaggerDoc(description.GroupName, CreateInfoForApiVersion(description));
-        }
     }
 
     private static OpenApiInfo CreateInfoForApiVersion(ApiVersionDescription description)
@@ -24,13 +25,10 @@ public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
         var info = new OpenApiInfo
         {
             Title = "Webshop API",
-            Version = description.ApiVersion.ToString(),
+            Version = description.ApiVersion.ToString()
         };
 
-        if (description.IsDeprecated)
-        {
-            info.Description += " This API version has been deprecated.";
-        }
+        if (description.IsDeprecated) info.Description += " This API version has been deprecated.";
 
         return info;
     }
