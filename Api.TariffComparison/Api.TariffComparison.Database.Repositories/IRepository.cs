@@ -2,7 +2,7 @@
 
 public interface IRepository<T> where T : class
 {
-    T? GetById(int identifier);
+    T? GetById(int id);
     IQueryable<T> List();
     void Add(T value);
     void Edit(T value);

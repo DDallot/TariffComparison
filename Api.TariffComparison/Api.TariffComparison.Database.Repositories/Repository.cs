@@ -11,7 +11,7 @@ public class Repository<T> : IRepository<T> where T : class
         _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
     }
 
-    public T? GetById(int identifier) => _dbContext.Set<T>().Find(identifier);
+    public T? GetById(int id) => _dbContext.Set<T>().Find(id);
     public IQueryable<T> List() => _dbContext.Set<T>().AsQueryable();
     public void Delete(T value) => _dbContext.Set<T>().Remove(value);
     public void Add(T value) => _dbContext.Set<T>().Add(value);

@@ -30,7 +30,7 @@ public class Electricity : IElectricity
         catch (Exception ex)
         {
             _logger.LogError("Error on Object {0}, method {1}, exception {2}", nameof(Electricity),
-                nameof(CompareAsync), ex.Message);
+                nameof(CompareAsync), ex);
             return new ListResult<ComparisonResponse>
             {
                 HasError = true,
