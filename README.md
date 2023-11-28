@@ -11,8 +11,7 @@ This is an extract of the items returned by the Tariff Provider:
 ```json
 [
 	{"name": "Product A", "type": 1, "baseCost": 5, "additionalKwhCost": 22},
-	{"name": "Product B", "type": 2, "includedKwh": 4000, "baseCost": 800, "additionalKwhCost": 30},
-	...
+	{"name": "Product B", "type": 2, "includedKwh": 4000, "baseCost": 800, "additionalKwhCost": 30}
 ]
 ```
 
@@ -59,7 +58,7 @@ computers if they are running Linux
 ### Getting Started
 
 
-1. Simulate a new Linux machine
+1. Simulate a new Linux machine on Windows
    
     ```
     docker run -v "$($PWD)/:/repo" -v "/var/run/docker.sock:/var/run/docker.sock" -it ubuntu
